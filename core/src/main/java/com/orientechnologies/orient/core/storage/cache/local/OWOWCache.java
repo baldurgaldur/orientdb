@@ -729,7 +729,7 @@ public final class OWOWCache extends OAbstractWriteCache implements OWriteCache,
       fileClassic = createFileInstance(fileName, fileId);
 
       if (!fileClassic.exists()) {
-        throw new OStorageException("File with name " + fileName + " does not exist in storage " + storageName);
+        throw new OStorageException("File with name " + createInternalFileName(fileName, fileId) + " does not exist in storage " + storageName);
       } else {
         // REGISTER THE FILE
         OLogManager.instance().debug(this,
